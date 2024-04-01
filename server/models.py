@@ -18,3 +18,11 @@ class Earthquake(db.Model, SerializerMixin):
 
     def __repr__(self):
         return f'<Earthquake {self.id}, {self.magnitude}, {self.location}, {self.year}>'
+    
+    def as_dict(self):
+        return {
+            "id": self.id,
+            "magnitude": self.magnitude,
+            "location": self.location,
+            "year": self.year
+        }
